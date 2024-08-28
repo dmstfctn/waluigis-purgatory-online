@@ -1,0 +1,112 @@
+#interface{
+  width: 90vw;
+  height: calc( 90vw / 16 * 9 );
+  position: relative;
+  margin-left: 5vw;
+  margin-top: calc( (100vh - (90vw / 16 * 9)) / 2 );
+}
+  #video{
+    width: 100%;
+    height: auto;
+  }
+  #overlay,
+  #info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+    .hotspot{
+      width: 5vw;
+      height: 5vw;
+      background-color: rgba( 255, 255, 255, 0.1 );
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s linear, transform 0.05s linear;
+      position: absolute;
+      left: -2.5vw;
+      top: -2.5vw;
+      border-radius: 50%;
+      transform: translateX(0) translateY(0);
+      cursor: pointer;
+    }
+
+    #overlay:hover .hotspot{
+      opacity: 1;
+      pointer-events: all;
+    }
+    #overlay .hotspot.hidden{
+      opacity: 0;
+      pointer-events: none;
+    }
+
+  #info{
+    pointer-events: none;
+  }
+    #info .info-panel{
+      position: absolute;
+      top: 3rem;
+      left: 3rem;
+      bottom: 3rem;
+      right: 3rem;
+      padding: 2rem;
+      box-sizing: border-box;
+      background-color: rgba( 255, 255, 0, 0.5);
+      color: #000000;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .5s linear;
+    }
+      #info .info-panel.visible{
+        opacity: 1;
+        pointer-events: all;
+      }
+  #video-controls{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+  }
+    #video-controls button{
+      background: transparent;
+      border: none;
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+    }
+    #chapters{
+
+    }
+      #chapters button{
+        display: block;
+        position: relative;
+      }
+        #chapters button:active::before,
+        #chapters button.current::before,
+        #chapters button:hover::before{
+          content: '';
+          width: .4em;
+          height: .4em;
+          border-radius: 50%;
+          background-color: #FFFFFF;
+          position: absolute;
+          right: 100%;
+          top: 50%;
+          transform: translateY(-70%);
+        }
+
+    #buttons{
+
+    }
+      #time{
+
+      }
+        #time button{
+
+        }
+      #playpause{
+
+      }

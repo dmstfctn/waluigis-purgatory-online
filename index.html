@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waluigi's Purgatory • dmstfctn</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="interface">
+    <video 
+      id="video" 
+      src="waluigispurgatoryexcerpts.mp4"
+      disablePictureInPicture
+    ></video>
+    <div id="overlay">
+      <!-- gets filled by js -->
+    </div>
+    <div id="info">
+      <div class="info-panel" id="waluigi">
+        This is information about Waluigi.
+      </div>
+      <div class="info-panel" id="checkerboard">
+        CHECKERBOARD CHECKERBOARD CHECKERBOARD.
+      </div>
+    </div>
+    <div id="video-controls">
+      <div id="chapters">
+        <!-- gets filled by js -->
+      </div>
+      <div id="buttons">
+        <div id="time">
+          <button name="backward">&larr;</button>
+          <button name="forward">&rarr;</button>
+        </div>
+        <div id="playpause">
+          <button name="playpause">play</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
