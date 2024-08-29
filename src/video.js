@@ -1,12 +1,40 @@
-export const $video = document.getElementById( 'video' );
+import Vimeo from '@vimeo/player';
+
+export const videoPlayer = new Vimeo('video', {
+  url: 'https://vimeo.com/1004219587/c15be3a75d',
+  airplay: false,
+  autoplay: false,
+  muted: false,
+  autopause: false,
+  background: false,
+  byline: false,
+  controls: false,
+  dnt: true,
+  width: 1920,
+  height: 1080,
+  loop: false,
+  pip: false,
+  playsinline: true,
+  responsive: true,
+  transparent: true,
+  volume: true
+});
+
+export const videoGetTime = ( cb = () => {} ) => {
+  videoPlayer.getCurrentTime().then( ( seconds ) => {
+    cb( seconds );
+  })
+}
 
 export const videoSetTime = ( time ) => {
-  $video.currentTime = time;
+  videoPlayer.setCurrentTime( time );
 }
 
 const videoSkip = ( amount ) => {
-  const newTime = ($video.currentTime + amount < 0) ? 0 : $video.currentTime + amount;
-  videoSetTime( newTime );
+  videoGetTime( ( time ) => {
+    const newTime = (time + amount < 0) ? 0 : time + amount;
+    videoSetTime( newTime );
+  });
 }
 
 export const videoJumpBackward = () => {
@@ -17,11 +45,11 @@ export const videoJumpForward = () => {
 }
 
 export const videoPlay = () => {
-  $video.play();
+  videoPlayer.play();
 }
 
 export const videoPause = () => {
-  $video.pause();
+  videoPlayer.pause();
 }
 
 export const videoToggle = () => {
@@ -33,10 +61,10 @@ export const videoToggle = () => {
 }
 
 let isPlaying = false;
-$video.addEventListener("playing", () => {
+videoPlayer.on("play", () => {
   isPlaying = true;
 });
-$video.addEventListener("pause", () => {
+videoPlayer.on("pause", () => {
   isPlaying = false;
 });
 

@@ -1,5 +1,8 @@
 import fs from 'fs';
-const file = fs.readFileSync( './ae-keyframes.txt' ).toString();
+
+const filename = (process.argv[2]) ? process.argv[2] : 'ae-keyframes.txt';
+
+const file = fs.readFileSync( `./${filename}` ).toString();
 const lines = file
                 .split('\n')
                 .map(( line ) => { 
@@ -27,4 +30,4 @@ const lines = file
 
 
 
-fs.writeFileSync( './keyframes.json', JSON.stringify(lines) );
+fs.writeFileSync( `${filename}.json`, JSON.stringify(lines) );

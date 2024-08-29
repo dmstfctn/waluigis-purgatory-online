@@ -1,6 +1,6 @@
 import CFG from './config.js';
 
-import { $video, videoJumpBackward  , videoJumpForward, videoSetTime, videoToggle } from './video.js';
+import { videoPlayer, videoJumpBackward, videoJumpForward, videoSetTime, videoGetTime, videoToggle } from './video.js';
 
 const $chapters = document.getElementById('chapters');
 const $btnChapters = [];
@@ -13,17 +13,17 @@ CFG.chapters.forEach( (chapter) => {
 
   $btn.addEventListener( 'click', () => {
     $btnChapters.forEach( ($other) => {
-      $other.classList.remove( 'current' );
+      $other.classList.remove( 'seeking' );
     });
-    $btn.classList.add('current');
+    $btn.classList.add('seeking');
     videoSetTime( chapter.time );
   });
   $chapters.appendChild( $btn );
   $btnChapters.push( $btn );
 });
 
-$video.addEventListener('timeupdate', () => {
-  const time = $video.currentTime;
+videoPlayer.on('timeupdate', ( { seconds } ) => {
+  const time = seconds;
   for( let i = 0; i < CFG.chapters.length; i++ ){
     const chapterTime = CFG.chapters[i].time;
     const nextChapterTime = (CFG.chapters[i+1]) ? CFG.chapters[i+1].time : Infinity;
@@ -43,14 +43,13 @@ $btnPlayPause.addEventListener('click', () => {
   videoToggle();
 });
 
-$video.addEventListener('pause', () => {
+videoPlayer.on('pause', () => {
   $btnPlayPause.innerText = 'play';
 });
 
-$video.addEventListener('playing', () => {
+videoPlayer.on('play', () => {
   $btnPlayPause.innerText = 'pause';
 });
-
 
 const $btnJumpForward = document.querySelector('#buttons #time button[name="forward"]');
 const $btnJumpBackward = document.querySelector('#buttons #time button[name="backward"]');
@@ -58,6 +57,7 @@ const $btnJumpBackward = document.querySelector('#buttons #time button[name="bac
 $btnJumpForward.addEventListener('click', () => {
   videoJumpForward();
 });
+
 $btnJumpBackward.addEventListener('click', () => {
   videoJumpBackward();
 });
