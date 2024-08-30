@@ -1,10 +1,32 @@
-#interface{
-  width: 90vw;
-  height: calc( 90vw / 16 * 9 );
-  position: relative;
-  margin-left: 5vw;
-  margin-top: calc( (100vh - (90vw / 16 * 9)) / 2 );
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
+
+body{
+  display: flex;
+  flex-direction: row;  
+  justify-content: center;
+}
+#interface{
+  width: calc( 100vh / 9 * 16 );
+  height: 100vh;
+  position: relative;
+  outline: 2px solid lime;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  body{
+    flex-direction: column;  
+  }
+  #interface{
+    width: 100vw;
+    height: calc( 100vw / 16 * 9 );
+  }
+}
+
   #video{
     width: 100%;
     height: auto;
