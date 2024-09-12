@@ -42,6 +42,7 @@ export const Marker = function( config ){
 }
 
 Marker.prototype = {
+  isVisible: false,
   update: function(){
     if( !this.$parent ) return;
     const w = this.$parent.offsetWidth;
@@ -55,13 +56,29 @@ Marker.prototype = {
         const y = ( frameData[2] / CFG.video.size.h ) * h;
         this.$ele.style.transform = `translateX(${x}px) translateY(${y}px)`;
         this.$ele.classList.remove( 'hidden' );
+        if( !this.isVisible ){
+          this.isVisible = true;
+          this._onVisible();
+        }
       } else {
         this.$ele.classList.add( 'hidden' );
+        if( this.isVisible ){
+          this.isVisible = false;
+          this._onHidden();
+        }
       }
     });   
   },
   appendTo: function( $parent ){
     this.$parent = $parent;
     $parent.appendChild( this.$ele );
+  },
+  onVisible: function(){ /* override */ },
+  _onVisible: function(){
+    this.onVisible();
+  },
+  onHidden: function(){ /* override */ },
+  _onHidden: function(){
+    this.onHidden();
   }
 }

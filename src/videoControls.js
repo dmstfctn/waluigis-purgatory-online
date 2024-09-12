@@ -14,6 +14,23 @@ import {
 const $chapters = document.getElementById('chapters');
 const $btnChapters = [];
 
+export const controlsHighlightChapter = ( index ) => {
+  if( $btnChapters[ index ] ){
+    $btnChapters[ index ].animate(
+      [
+        { color: '#ffffff' },
+        { color: '#FF0000', offset: 0.3 },
+        { color: '#FF0000', offset: 0.7 },
+        { color: '#ffffff', offset: 1 }
+      ],
+      {
+        duration: 500,
+        iterations: 1
+      }
+    )
+  }
+}
+
 CFG.chapters.forEach( (chapter, i ) => {
   const $btn = document.createElement('button');
   $btn.name = chapter.name;
