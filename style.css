@@ -3,6 +3,7 @@ html, body{
   padding: 0;
   height: 100%;
   width: 100%;
+  background: black;
 }
 
 body{
@@ -14,7 +15,6 @@ body{
   width: calc( 100vh / 9 * 16 );
   height: 100vh;
   position: relative;
-  outline: 2px solid lime;
 }
 
 @media (max-aspect-ratio: 16/9) {
