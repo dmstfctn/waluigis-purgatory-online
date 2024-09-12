@@ -138,12 +138,20 @@ body{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 2px;
     background: transparent;
   }
     #progress .progress--indicator{
       width: 0;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
       transition: width .1s linear;
-      height: 100%;
       background: rgba( 255,255,255,0.5);
+    }
+
+    #progress .progress--notes{
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      color: rgba( 255, 255, 255, 0.5);
     }

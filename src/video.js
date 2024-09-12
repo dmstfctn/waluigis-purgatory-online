@@ -38,6 +38,10 @@ export const videoSetChapterIndex = (index) => {
   videoCurrentChapter = index;
 }
 
+export const videoGetChapterIndex = (index) => {
+  return videoCurrentChapter;
+}
+
 export const videoSetChapter = ( index ) => {
   if( CFG.chapters[index] ){
     videoSetTime( CFG.chapters[index].time );

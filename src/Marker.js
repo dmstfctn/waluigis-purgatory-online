@@ -20,6 +20,7 @@ const createData = function( type, data ){
 
 export const Marker = function( config ){
   this.id = config.id;
+  this.chapterIndex = config.chapterIndex;
   this.data = createData( config.type, config.data );
   this.$ele = document.createElement('div');
   this.$ele.classList.add('hotspot');
@@ -34,6 +35,7 @@ export const Marker = function( config ){
       $panel.classList.remove('visible');
     });
     this.$infoPanel.classList.add('visible');
+    this.isClicked = true;
   })
   this.$infoPanel.addEventListener('click', ( e ) => {
     videoPlay();
@@ -43,6 +45,7 @@ export const Marker = function( config ){
 
 Marker.prototype = {
   isVisible: false,
+  isClicked: false,
   update: function(){
     if( !this.$parent ) return;
     const w = this.$parent.offsetWidth;

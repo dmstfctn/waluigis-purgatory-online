@@ -6,6 +6,7 @@ import {
   videoJumpForward,
   videoSetChapter,
   videoSetChapterIndex,
+  videoGetChapterIndex,
   videoToggle,
   videoNextChapter,
   videoPrevChapter
