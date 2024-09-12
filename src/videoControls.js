@@ -18,14 +18,14 @@ export const controlsHighlightChapter = ( index ) => {
   if( $btnChapters[ index ] ){
     $btnChapters[ index ].animate(
       [
-        { color: '#ffffff' },
-        { color: '#FF0000', offset: 0.3 },
-        { color: '#FF0000', offset: 0.7 },
-        { color: '#ffffff', offset: 1 }
+        { opacity: 0 },
+        { opacity: 0, offset: 0.5 },
+        { opacity: 1, offset: 0.51 },
+        { opacity: 1 },
       ],
       {
         duration: 500,
-        iterations: 1
+        iterations: 10
       }
     )
   }
