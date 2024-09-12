@@ -11,6 +11,8 @@ import {
   videoPrevChapter
 } from './video.js';
 
+const $progress = document.getElementById('progress');
+const $progressIndicator = $progress.querySelector('.progress--indicator');
 const $chapters = document.getElementById('chapters');
 const $btnChapters = [];
 
@@ -51,6 +53,10 @@ CFG.chapters.forEach( (chapter, i ) => {
 
 videoPlayer.on('timeupdate', ( { seconds } ) => {
   const time = seconds;
+  videoPlayer.getDuration().then( (duration) => {
+    $progressIndicator.style.width = `${(seconds/duration) * 100}%`
+  });
+  
   for( let i = 0; i < CFG.chapters.length; i++ ){
     const chapterTime = CFG.chapters[i].time;
     const nextChapterTime = (CFG.chapters[i+1]) ? CFG.chapters[i+1].time : Infinity;
