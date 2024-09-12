@@ -1,11 +1,20 @@
 import CFG from './config.js';
 
-import { videoPlayer, videoJumpBackward, videoJumpForward, videoSetTime, videoGetTime, videoToggle } from './video.js';
+import { 
+  videoPlayer,
+  videoJumpBackward,
+  videoJumpForward,
+  videoSetChapter,
+  videoCurrentChapter,
+  videoToggle,
+  videoNextChapter,
+  videoPrevChapter
+} from './video.js';
 
 const $chapters = document.getElementById('chapters');
 const $btnChapters = [];
 
-CFG.chapters.forEach( (chapter) => {
+CFG.chapters.forEach( (chapter, i ) => {
   const $btn = document.createElement('button');
   $btn.name = chapter.name;
   $btn.innerText = chapter.name;
@@ -16,7 +25,8 @@ CFG.chapters.forEach( (chapter) => {
       $other.classList.remove( 'seeking' );
     });
     $btn.classList.add('seeking');
-    videoSetTime( chapter.time );
+    videoSetChapter( i );
+    videoCurrentChapter = i;
   });
   $chapters.appendChild( $btn );
   $btnChapters.push( $btn );
@@ -32,12 +42,28 @@ videoPlayer.on('timeupdate', ( { seconds } ) => {
         $other.classList.remove( 'current' );
       });
       $btnChapters[i].classList.add('current');
+      videoCurrentChapter = i;
       break;
     }
   }
 });
 
 const $btnPlayPause = document.querySelector('#playpause button');
+
+document.body.addEventListener('keydown', ( e ) => {
+  console.log(e);
+  if( e.key === 'ArrowRight' ){
+    videoJumpForward();
+  } else if( e.key === 'ArrowLeft' ){
+    videoJumpBackward();
+  } else if( e.key === 'ArrowUp' ){
+    videoPrevChapter();
+  } else if ( e.key === 'ArrowDown' ){
+    videoNextChapter();
+  }else if( e.key === ' ' ){
+    videoToggle();
+  }
+});
 
 $btnPlayPause.addEventListener('click', () => {
   videoToggle();

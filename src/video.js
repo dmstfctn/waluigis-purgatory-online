@@ -1,5 +1,9 @@
 import Vimeo from '@vimeo/player';
 
+import CFG from './config.js';
+
+export let videoCurrentChapter = 0;
+
 export const videoPlayer = new Vimeo('video', {
   url: 'https://vimeo.com/1004219587/c15be3a75d',
   airplay: false,
@@ -28,6 +32,21 @@ export const videoGetTime = ( cb = () => {} ) => {
 
 export const videoSetTime = ( time ) => {
   videoPlayer.setCurrentTime( time );
+}
+
+export const videoSetChapter = ( index ) => {
+  if( CFG.chapters[index] ){
+    videoSetTime( CFG.chapters[index].time );
+    videoCurrentChapter = index;
+  }
+}
+
+export const videoNextChapter = () => {
+  videoSetChapter( videoCurrentChapter + 1 );
+}
+
+export const videoPrevChapter = () => {
+  videoSetChapter( videoCurrentChapter - 1 );
 }
 
 const videoSkip = ( amount ) => {
