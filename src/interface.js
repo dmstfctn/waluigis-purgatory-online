@@ -19,6 +19,15 @@ const frame = () => {
 }
 requestAnimationFrame( frame );
 
+let overlayShowTimeout = false;
+$overlay.addEventListener( 'mousemove', () => {
+  $overlay.classList.add( 'active' );
+  clearTimeout( overlayShowTimeout );
+  overlayShowTimeout = setTimeout( () => {
+    $overlay.classList.remove( 'active' );
+  }, 2000 );
+});
+
 $overlay.addEventListener( 'click', () => {
   if( videoIsPlaying() ){
     videoPause();
