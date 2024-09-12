@@ -5,7 +5,7 @@ import {
   videoJumpBackward,
   videoJumpForward,
   videoSetChapter,
-  videoCurrentChapter,
+  videoSetChapterIndex,
   videoToggle,
   videoNextChapter,
   videoPrevChapter
@@ -45,7 +45,6 @@ CFG.chapters.forEach( (chapter, i ) => {
     });
     $btn.classList.add('seeking');
     videoSetChapter( i );
-    videoCurrentChapter = i;
   });
   $chapters.appendChild( $btn );
   $btnChapters.push( $btn );
@@ -65,7 +64,7 @@ videoPlayer.on('timeupdate', ( { seconds } ) => {
         $other.classList.remove( 'current' );
       });
       $btnChapters[i].classList.add('current');
-      videoCurrentChapter = i;
+      videoSetChapterIndex( i );
       break;
     }
   }
