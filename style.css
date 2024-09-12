@@ -70,20 +70,43 @@ body{
       position: absolute;
       top: 3rem;
       left: 3rem;
-      bottom: 3rem;
-      right: 3rem;
-      padding: 2rem;
+      width: 40%;
+      padding: 1rem;
       box-sizing: border-box;
-      background-color: rgba( 255, 255, 0, 0.5);
+      background-color: rgba( 140, 140, 140, 1);
       color: #000000;
-      text-align: center;
       opacity: 0;
       pointer-events: none;
       transition: opacity .5s linear;
+      display: flex;
+      flex-direction: column;
     }
       #info .info-panel.visible{
         opacity: 1;
         pointer-events: all;
+      }
+      .info-panel .panel-text{
+        font-size: 1.2rem;
+        flex-grow: 1;
+      }
+      .info-panel .panel-text p{
+        margin-top: 0;
+      }
+      .info-panel .panel-images{
+        display: flex;
+        flex-grow: 0;
+        justify-content: space-between;
+      }
+      .info-panel .panel-images img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+      .info-panel .panel-images img{
+        margin-right: 1rem;
+      }
+      .info-panel .panel-images img:last-child{
+        margin-right: 0;
       }
   #video-controls{
     position: absolute;
