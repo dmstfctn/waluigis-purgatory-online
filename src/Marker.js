@@ -24,7 +24,7 @@ export const Marker = function( config ){
   this.$ele = document.createElement('div');
   this.$ele.classList.add('hotspot');
   this.$ele.classList.add(`hotspot__${this.id}`);
-  this.$ele.style.backgroundImage = config.image;
+  this.$ele.style.backgroundImage = `url(${config.image})`;
   this.$parent = false;
   this.$infoPanel = document.getElementById( this.id );
   this.$ele.addEventListener( 'click', ( e ) => {

@@ -49,9 +49,9 @@ body{
       position: absolute;
       left: -2.5vw;
       top: -2.5vw;
-      border-radius: 50%;
       transform: translateX(0) translateY(0);
       cursor: pointer;
+      background-size: contain;
     }
 
     #overlay.active .hotspot{
