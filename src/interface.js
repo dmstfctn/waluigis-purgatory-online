@@ -5,11 +5,7 @@ import { controlsHighlightChapter } from "./videoControls.js";
 
 const $overlay = document.getElementById( 'overlay' );
 
-const $progressNotes = document.querySelector( '#progress .progress--notes' );
-const $notesRead = document.getElementById( 'notes-read' );
-const $notesTotal = document.getElementById( 'notes-total' );
-
-const markers = [];
+export const markers = [];
 CFG.markers.forEach( (config) => {
   const marker = new Marker( config );
   marker.appendTo( $overlay );
@@ -24,11 +20,6 @@ const frame = () => {
   markers.forEach( (marker) => {
     marker.update();
   });
-  const chapterIndex = videoGetChapterIndex();
-  const chapterMarkersTotal = markers.filter( ( marker ) => marker.chapterIndex === chapterIndex ).length;
-  const chapterMarkersClicked = markers.filter( ( marker ) => marker.chapterIndex === chapterIndex && marker.isClicked ).length;
-  $notesTotal.innerText = chapterMarkersTotal;
-  $notesRead.innerHTML = chapterMarkersClicked;
 }
 requestAnimationFrame( frame );
 

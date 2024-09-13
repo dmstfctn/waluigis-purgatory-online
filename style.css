@@ -99,6 +99,7 @@ body{
 
   #info{
     pointer-events: none;
+    z-index: 50;
   }
     #info .info-panel{
       position: absolute;
@@ -120,6 +121,10 @@ body{
     }
     #info .info-panel__nofig{
       width: auto;
+    }
+    #info .info-panel__image{
+      padding: 0;
+      background: transparent;
     }
       #info .info-panel.visible{
         opacity: 1;
@@ -168,6 +173,7 @@ body{
         flex: 1 1 0px;
         display: flex;
         flex-direction: column;
+        max-width: 20rem;
       }
         .info-panel .panel-figures figure img,
         .info-panel .panel-figures figure video{
@@ -185,8 +191,9 @@ body{
   #video-controls{
     position: absolute;
     bottom: 0;
-    right: 0;
-    padding: 1rem;
+    left: 0;
+    padding: 1.5rem;
+    padding-bottom: 2rem;
   }
     #video-controls button{
       background: transparent;
@@ -197,13 +204,14 @@ body{
       cursor: pointer;
     }
     #chapters{
-
+      margin-bottom: 0.5rem;
     }
       #chapters button{
         display: block;
         position: relative;
+        transition: color .13s linear;
       }
-        #chapters button:active::before,
+        /* #chapters button:active::before,
         #chapters button.current::before,
         #chapters button:hover::before{
           content: '';
@@ -215,6 +223,11 @@ body{
           right: 100%;
           top: 50%;
           transform: translateY(-70%);
+        } */
+        #chapters button:active,
+        #chapters button.current,
+        #chapters button:hover{
+          color: #ff0000;
         }
 
     #buttons{
@@ -238,13 +251,39 @@ body{
     background: transparent;
   }
     #progress .progress--indicator{
-      width: 0;
-      height: 2px;
+      width: 100%;
+      height: 1rem;
       position: absolute;
       bottom: 0;
-      transition: width .1s linear;
-      background: rgba( 255,255,255,0.5);
+      background: rgba( 255,255,255,0.1);
     }
+      .progress--indicator .bar{
+        width: 0;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        background: #ff0000;        
+        transition: width .1s linear;
+      }
+      #progress .progress--indicator .notes{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+      #progress .progress--indicator .notes .note{
+        position: absolute;
+        left: 0;
+        font-size: 0.6rem;
+        color: red;
+        line-height: 1rem; 
+        transition: color .5s linear;
+      }
+        #progress .progress--indicator .notes .note.gone{
+          color: #000000;
+        }
 
     #progress .progress--notes{
       position: absolute;

@@ -1,4 +1,4 @@
-import CFG from './config.js';
+import CFG, { calculateFrames } from './config.js';
 
 import { 
   videoPlayer,
@@ -12,8 +12,11 @@ import {
   videoPrevChapter
 } from './video.js';
 
+import { markers } from './interface.js';
+
 const $progress = document.getElementById('progress');
-const $progressIndicator = $progress.querySelector('.progress--indicator');
+const $progressIndicatorBar = $progress.querySelector('.progress--indicator .bar');
+const $progressIndicatorNotes = $progress.querySelector('.progress--indicator .notes');
 const $chapters = document.getElementById('chapters');
 const $btnChapters = [];
 
@@ -51,12 +54,34 @@ CFG.chapters.forEach( (chapter, i ) => {
   $btnChapters.push( $btn );
 });
 
+videoPlayer.getDuration().then( (duration) => {
+  const totalFrames = calculateFrames( Math.floor(duration / 60), duration % 60 );
+  markers.forEach( (marker, i ) => {
+    const num = i + 1;
+    const pos = (marker.getStartingFrameNumber() / totalFrames) * 100;
+    const $note = document.createElement('span');
+    $note.classList.add('note');
+    $note.innerText = num;
+    $note.style.left = `${ pos }%`;
+    $progressIndicatorNotes.appendChild( $note );
+  });
+})
+
 videoPlayer.on('timeupdate', ( { seconds } ) => {
   const time = seconds;
+
   videoPlayer.getDuration().then( (duration) => {
-    $progressIndicator.style.width = `${(seconds/duration) * 100}%`
+    const progress = (seconds/duration) * 100
+    $progressIndicatorBar.style.width = `${ progress }%`;
+    $progressIndicatorNotes.querySelectorAll('.note').forEach( ($note) => {
+      if( parseFloat($note.style.left) < progress ){
+        $note.classList.add('gone');
+      } else {
+        $note.classList.remove('gone');
+      }
+    })
   });
-  
+
   for( let i = 0; i < CFG.chapters.length; i++ ){
     const chapterTime = CFG.chapters[i].time;
     const nextChapterTime = (CFG.chapters[i+1]) ? CFG.chapters[i+1].time : Infinity;
@@ -70,8 +95,6 @@ videoPlayer.on('timeupdate', ( { seconds } ) => {
     }
   }
 });
-
-const $btnPlayPause = document.querySelector('#playpause button');
 
 document.body.addEventListener('keydown', ( e ) => {
   console.log(e);
@@ -88,17 +111,17 @@ document.body.addEventListener('keydown', ( e ) => {
   }
 });
 
-$btnPlayPause.addEventListener('click', () => {
-  videoToggle();
-});
+// $btnPlayPause.addEventListener('click', () => {
+//   videoToggle();
+// });
 
-videoPlayer.on('pause', () => {
-  $btnPlayPause.innerText = 'play';
-});
+// videoPlayer.on('pause', () => {
+//   $btnPlayPause.innerText = 'play';
+// });
 
-videoPlayer.on('play', () => {
-  $btnPlayPause.innerText = 'pause';
-});
+// videoPlayer.on('play', () => {
+//   $btnPlayPause.innerText = 'pause';
+// });
 
 const $btnJumpForward = document.querySelector('#buttons #time button[name="forward"]');
 const $btnJumpBackward = document.querySelector('#buttons #time button[name="backward"]');

@@ -7,6 +7,6 @@ window.location.search.replace('?','').split('&').forEach( (entry) => {
         document.getElementById( val ).style.opacity = 1;
         document.getElementById( val ).querySelectorAll('img, video').forEach(( $ele ) => { 
             $ele.src = $ele.dataset.src;
-          });
+        });
     }
 })

@@ -92,6 +92,9 @@ Marker.prototype = {
     this.$parent = $parent;
     $parent.appendChild( this.$ele );
   },
+  getStartingFrameNumber: function(){
+    return this.data[0][0];
+  },
   onVisible: function(){ /* override */ },
   _onVisible: function(){
     this.onVisible();

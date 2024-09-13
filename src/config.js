@@ -4,7 +4,7 @@ import dataWaluigiCh3 from './data/chapter3.json';
 import dataWaluigiCh4 from './data/chapter4.json';
 
 const FRAMERATE = 60;
-const calculateFrames = ( minutes, seconds ) => {
+export const calculateFrames = ( minutes, seconds ) => {
   return ( (minutes * 60) * FRAMERATE ) + (seconds * FRAMERATE);
 }
 
@@ -94,22 +94,6 @@ export default {
 
     /* CHAPTER 2 */
     {
-      id: 'stage',
-      type: 'range',
-      image: 'sparkle.gif',
-      chapterIndex: 1,
-      data: {
-        frames: {
-          from: calculateFrames( 1, 57 ),
-          to: calculateFrames( 2, 16 )
-        },
-        position: {
-          x: 960,
-          y: 540
-        }
-      }
-    },
-    {
       id: 'letters',
       type: 'range',
       image: 'sparkle.gif',
@@ -142,6 +126,22 @@ export default {
       }
     },
     {
+      id: 'stage',
+      type: 'range',
+      image: 'sparkle.gif',
+      chapterIndex: 1,
+      data: {
+        frames: {
+          from: calculateFrames( 1, 57 ),
+          to: calculateFrames( 2, 16 )
+        },
+        position: {
+          x: 960,
+          y: 540
+        }
+      }
+    },
+    {
       id: 'waluigi-ch2',
       type: 'continuous',
       image: 'sparkle.gif',
@@ -167,22 +167,6 @@ export default {
       }
     },
     {
-      id: 'G',
-      type: 'range',
-      image: 'sparkle.gif',
-      chapterIndex: 2,
-      data: {
-        frames: {
-          from: calculateFrames( 6, 3 ),
-          to: calculateFrames( 7, 30 )
-        },
-        position: {
-          x: 415,
-          y: 920
-        }
-      }
-    },
-    {
       id: 'Z',
       type: 'range',
       image: 'sparkle.gif',
@@ -195,6 +179,22 @@ export default {
         position: {
           x: 800,
           y: 600
+        }
+      }
+    },
+    {
+      id: 'G',
+      type: 'range',
+      image: 'sparkle.gif',
+      chapterIndex: 2,
+      data: {
+        frames: {
+          from: calculateFrames( 6, 3 ),
+          to: calculateFrames( 7, 30 )
+        },
+        position: {
+          x: 415,
+          y: 920
         }
       }
     },
@@ -214,16 +214,9 @@ export default {
         }
       }
     },
-    {
-      id: 'waluigi-ch3',
-      type: 'continuous',
-      image: 'sparkle.gif',
-      chapterIndex: 2,
-      data: dataWaluigiCh3
-    },
     /* CHAPTER 4 */
     {
-      id: 'stage-ch4-1',
+      id: 'stage-ch4',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 3,
@@ -235,22 +228,6 @@ export default {
         position: {
           x: 960,
           y: 540
-        }
-      }
-    },
-    {
-      id: 'stage-ch4-2',
-      type: 'range',
-      image: 'sparkle.gif',
-      chapterIndex: 3,
-      data: {
-        frames: {
-          from: calculateFrames( 10, 0 ),
-          to: calculateFrames( 11, 48 )
-        },
-        position: {
-          x: 500,
-          y: 300
         }
       }
     },
@@ -269,28 +246,6 @@ export default {
           y: 700
         }
       }
-    },
-    {
-      id: 'exit',
-      type: 'range',
-      image: 'sparkle.gif',
-      chapterIndex: 3,
-      data: {
-        frames: {
-          from: calculateFrames( 10, 58 ),
-          to: calculateFrames( 11, 48 )
-        },
-        position: {
-          x: 1500,
-          y: 140
-        }
-      }
-    },
-    // {
-    //   id: 'waluigi-ch4',
-    //   type: 'continuous',
-    //   image: 'sparkle.gif',
-    //   data: dataWaluigiCh4
-    // },
+    }
   ]
 }
