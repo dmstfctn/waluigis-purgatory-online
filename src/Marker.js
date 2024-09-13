@@ -79,6 +79,9 @@ Marker.prototype = {
   showPanel: function(){
     hideAllPanels();
     this.$infoPanel.classList.add('visible');
+    this.$infoPanel.querySelectorAll('img, video').forEach(( $ele ) => { 
+      $ele.src = $ele.dataset.src;
+    });
     this.isPanelVisible = true;
   },
   hidePanel: function(){
