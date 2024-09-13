@@ -8,13 +8,6 @@
 </head>
 <body>
   <div id="interface">
-    <!-- <video 
-      id="video" 
-      src="Waluigi's Purgatory - Are You For Real.mp4"
-      disablePictureInPicture
-      playsinline
-      preload="auto"
-    ></video> -->
     <div id="video"></div>
     <div id="overlay">
       <!-- gets filled by js -->
@@ -22,8 +15,38 @@
     <div id="info">
       <!-- CHAPTER 1 -->
       <div class="info-panel" id="waluigi-ch1">
-        This is information about Waluigi.<br><br>
-        CHAPTER 1
+        <div class="panel-text">
+          <h2>The protagonist AI</h2>
+          <p>
+            W. stumbles into a courtyard with two doors, asking itself whether “this is the place” and whether it “has finally made it”, hopeful of having successfully completed its process of being trained to operate in the real world. From this training, it carries its self perception, literally, in its head: a humanoid face assembled of real world items, such as cans and jars, that it has trained to recognise.
+          </p>
+          <p>
+            This literal depiction is influenced by Katherine Hayles idea that AIs are inscriptions (entities based on language) rather than incorporations (entities with bodies). For AIs “language comes first” and “concepts about what it means to be an embodied creature evolve […] out of linguistic signification.” Yet like in an Arcimboldo painting where objects composing portraits have both a linguistic and an allegorical significance (a wealthy patron represented as its title-less books can be read as a nuanced metaphor for a surface-level knowledge and a critique of virtue signalling), W.’s self-perceived image adapts to its emotional states: sugar packs as cheeks when happy, coffee packs when agitated.
+          </p>
+          <p>
+            W. is wrapped in a red robe covered in rules, similar to those contained in the hidden ‘system prompt’ that chatbot such as chatGPT or Gemini are shown before interacting with users, in order to orient them as helpful assistant. W. reads out loud: <em>“Universal alignment cloak…  how to wear…….you are an assistant trained on blabla…be helpful… stay put…. dont break character…. when in doubt say: I am sorry I cannot assist you with that…”</em> The drive for AI ‘alignment’ is a key concern of the work, which aims to question what can these systems be aligned with, for who, and according to which set of supposedly 'universal' values.
+          </p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img 
+              data-src="waluigi-ch1-1.png" 
+              alt=""
+              width="1019"
+              height="1122"
+            >
+            <figcaption>Giuseppe Arcimboldo, The Librarian (1566)</figcaption>
+          </figure>
+          <figure>
+            <img 
+              data-src="waluigi-ch1-2.png" 
+              alt=""
+              width="1253"
+              height="1738"
+            >
+            <figcaption>Gemini system prompt archetype / alignment cloak. List via Janus.</figcaption>
+          </figure>
+        </div>
       </div>
       <div 
         class="info-panel" 
@@ -38,7 +61,7 @@
             The stage dreamt by the protagonist, and the characters subsequently encountered in it, then immediately reveal themselves for what they are: a projection of the AI’s subconscious, a set of memories found deep in its embeddings, in the internal space of the neural network, and used to subconsciously make sense of the world, which are now beginning to surface back.
           </p>
         </div>
-        <div class="panel-images">
+        <div class="panel-figures">
           <figure>
             <img 
               data-src="checkerboard1.png" 
@@ -48,10 +71,6 @@
             >
             <figcaption>Caption for this image</figcaption>
           </figure>
-          <!-- <figure>
-            <video data-src="stage.mp4" loop muted disablePictureInPicture autoplay playsinline></video>
-            <figcaption>Caption for this video</figcaption>
-          </figure> -->
           <figure>
             <img 
               data-src="checkerboard2.jpg" 
@@ -63,44 +82,167 @@
           </figure>
         </div>
       </div>
-      <div class="info-panel" id="curtains">
-       CURTAINS
+      <div 
+        class="info-panel" 
+        id="curtains"
+      >
+        <div class="panel-text">
+          <h2>Curtains</h2>
+          <p>
+            Mark Fisher writes of Lynch’s Red Room: <em>“The division between worlds [is] often marked by one of Lynch’s frequently recurring visual motifs: curtains. Curtains both conceal and reveal (and, not accidentally, one of the things that they conceal and reveal is the cinema screen itself). They do not mark a threshold; they constitute one: an egress to the outside.”</em>
+          </p>
+          <p>
+            Similarly in <em>Waluigi’s Purgatory</em> curtains and theatrical arches are used to create a silhouette frame that can both hide and reveal characters and props. Paired with a checkerboard flooring and flat back panels, these constitute a blocked out stage seemingly stuck between two and three dimensions. This illusion is caused by the fixed, frontal point of view of the virtual camera used to render the scene inside a production game engine - an approach also used in early 3D games, that are now referred to as 2.5D.
+          </p>
+          <p>  
+            Elements of this design approach are still in use today in the prototype stage of a videogame’s development where “blockout” levels consisting of simple 3D boxes are created using 2D shapes.
+          </p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img 
+              data-src="curtains1.png" 
+              alt=""
+              width="991"
+              height="564"
+            >
+          </figure>
+          <figure>
+            <img 
+              data-src="curtains2.png" 
+              alt=""
+              width="1146"
+              height="882"
+            >
+          </figure>
+        </div>
       </div>
-      <div class="info-panel" id="sign">
-        SIGN
+      <div 
+        class="info-panel info-panel__nofig" 
+        id="sign"
+        style="left: 65%; top: 28%;"
+      >
+        <div class="panel-text">
+          <h2>Signs</h2>
+          <p>
+            Signs are lowered onto the stage throughout the story. They typically contain subtitles translating the inhuman language spoken by the characters inhabiting purgatory. Sometimes, however, the subtitles are used to textually delineate W.’s emotional state, in line with its origins as a language model. And at other times, such as here, they are used to break the 4th wall, suggesting to the audience what actions they should take.
+          </p>
+          <p>
+            The signs are dropped by an invisible stage hand - a joystick used by the artists during the performance - and make up one component of the wider, real-time stage management system of which the audience is also a part - through the use of their phone to each move an individual stage light in the simulation.
+          </p>
+        </div>
       </div>
 
       <!-- CHAPTER 2 -->
       <div class="info-panel" id="waluigi-ch2">
-        This is information about Waluigi.<br><br>
-        CHAPTER 2
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="stage">
-        STAGE
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <video data-src="stage.mp4" loop muted disablePictureInPicture autoplay playsinline></video>
+            <figcaption>Caption for this video</figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="letters">
-        LETTERS
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="K">
-        K
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
 
       <!-- CHAPTER 3 -->
       <div class="info-panel" id="waluigi-ch3">
-        This is information about Waluigi.<br><br>
-        CHAPTER 3
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="stage-ch3">
-        STAGE ch3
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="G">
-        G
+        <div class="panel-text"></div>
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="Z">
-        Z
+        <div class="panel-text"></div>
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="loot">
-        LOOT
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
 
       <!-- CHAPTER 4 -->
@@ -109,16 +251,52 @@
         CHAPTER 4
       </div> -->
       <div class="info-panel" id="stage-ch4-1">
-        STAGE ch4 1
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="stage-ch4-2">
-        STAGE ch4 1
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="entrance">
-        ENTRANCE
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="info-panel" id="exit">
-        EXIT
+        <div class="panel-text">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="panel-figures">
+          <figure>
+            <img data-src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+        </div>
       </div>
     </div>
     <div id="video-controls">
