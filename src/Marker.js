@@ -48,6 +48,7 @@ export const Marker = function( config ){
 
 Marker.prototype = {
   isVisible: false,
+  isPanelVisible: false,
   isClicked: false,
   update: function(){
     if( !this.$parent ) return;
@@ -55,7 +56,7 @@ Marker.prototype = {
     const h = this.$parent.offsetHeight;
     videoGetTime( (seconds) => {
       const time = seconds * 1000;
-      const frame = Math.floor( time / (1000/60) );
+      const frame = Math.floor( time / (1000 / CFG.video.framerate ) );
       const frameData = this.data.find( ele  => ele[0] === frame );
       if( frameData ){  
         const x = ( frameData[1] / CFG.video.size.w ) * w;
@@ -78,9 +79,11 @@ Marker.prototype = {
   showPanel: function(){
     hideAllPanels();
     this.$infoPanel.classList.add('visible');
+    this.isPanelVisible = true;
   },
   hidePanel: function(){
     this.$infoPanel.classList.remove('visible');
+    this.isPanelVisible = false;
   },
   appendTo: function( $parent ){
     this.$parent = $parent;
