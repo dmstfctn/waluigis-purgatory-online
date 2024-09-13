@@ -1,1 +1,1 @@
-To get it to work, add the video file at `public/waluigispurgatoryexcerpts.mp4`
+For [Are You For Real](https://www.ru4real.de/)
