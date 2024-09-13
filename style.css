@@ -73,15 +73,15 @@ body{
     height: 100%;
   }
     .hotspot{
-      width: 5vw;
-      height: 5vw;
-      background-color: rgba( 255, 255, 255, 0.1 );
+      width: 4vw;
+      height: 4vw;
+      //background-color: rgba( 255, 255, 255, 0.1 );
       opacity: 0;
       pointer-events: none;
       transition: opacity .3s linear, transform 0.05s linear;
       position: absolute;
-      left: -2.5vw;
-      top: -2.5vw;
+      left: -2vw;
+      top: -2vw;
       transform: translateX(0) translateY(0);
       cursor: pointer;
       background-size: contain;
@@ -169,6 +169,8 @@ body{
         .info-panel .panel-images figure video{
           width: 100%;
           height: auto;
+          background-color: rgba(255,255,255,0.05);
+          border: none;
         }
         .info-panel .panel-images figure figcaption{
           margin-top: 0.3rem;

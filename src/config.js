@@ -39,7 +39,7 @@ export default {
     {
       id: 'checkerboard',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 0,
       data: {
         frames: {
@@ -55,7 +55,7 @@ export default {
     {
       id: 'curtains',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 0,
       data: {
         frames: {
@@ -71,7 +71,7 @@ export default {
     {
       id: 'sign',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 0,
       data: {
         frames: {
@@ -87,7 +87,7 @@ export default {
     {
       id: 'waluigi-ch1',
       type: 'continuous',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 0,
       data: dataWaluigiCh1
     },
@@ -96,7 +96,7 @@ export default {
     {
       id: 'stage',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 1,
       data: {
         frames: {
@@ -112,7 +112,7 @@ export default {
     {
       id: 'letters',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 1,
       data: {
         frames: {
@@ -128,7 +128,7 @@ export default {
     {
       id: 'K',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 1,
       data: {
         frames: {
@@ -144,7 +144,7 @@ export default {
     {
       id: 'waluigi-ch2',
       type: 'continuous',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 1,
       data: dataWaluigiCh2
     },
@@ -153,7 +153,7 @@ export default {
     {
       id: 'stage-ch3',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 2,
       data: {
         frames: {
@@ -169,7 +169,7 @@ export default {
     {
       id: 'G',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 2,
       data: {
         frames: {
@@ -185,7 +185,7 @@ export default {
     {
       id: 'Z',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 2,
       data: {
         frames: {
@@ -201,7 +201,7 @@ export default {
     {
       id: 'loot',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 2,
       data: {
         frames: {
@@ -217,7 +217,7 @@ export default {
     {
       id: 'waluigi-ch3',
       type: 'continuous',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 2,
       data: dataWaluigiCh3
     },
@@ -225,7 +225,7 @@ export default {
     {
       id: 'stage-ch4-1',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 3,
       data: {
         frames: {
@@ -241,7 +241,7 @@ export default {
     {
       id: 'stage-ch4-2',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 3,
       data: {
         frames: {
@@ -257,7 +257,7 @@ export default {
     {
       id: 'entrance',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 3,
       data: {
         frames: {
@@ -273,7 +273,7 @@ export default {
     {
       id: 'exit',
       type: 'range',
-      image: 'image.png',
+      image: 'sparkle.gif',
       chapterIndex: 3,
       data: {
         frames: {
@@ -289,7 +289,7 @@ export default {
     // {
     //   id: 'waluigi-ch4',
     //   type: 'continuous',
-    //   image: 'image.png',
+    //   image: 'sparkle.gif',
     //   data: dataWaluigiCh4
     // },
   ]
