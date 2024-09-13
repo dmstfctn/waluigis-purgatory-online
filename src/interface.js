@@ -1,10 +1,11 @@
 import CFG from "./config.js";
 import { Marker } from "./Marker.js";
-import { videoPlay, videoPause, videoIsPlaying, videoGetChapterIndex } from './video';
+import { videoPlayer, videoPlay, videoPause, videoIsPlaying, videoGetChapterIndex } from './video';
 import { controlsHighlightChapter } from "./videoControls.js";
 
 const $overlay = document.getElementById( 'overlay' );
 
+const $progressNotes = document.querySelector( '#progress .progress--notes' );
 const $notesRead = document.getElementById( 'notes-read' );
 const $notesTotal = document.getElementById( 'notes-total' );
 
@@ -48,3 +49,10 @@ $overlay.addEventListener( 'click', () => {
   }
 });
 
+videoPlayer.on('play', () => {
+  $progressNotes.classList.add('show');
+});
+
+videoPlayer.on('pause', () => {
+  $progressNotes.classList.remove('show');
+});
