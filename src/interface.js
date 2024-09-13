@@ -1,5 +1,5 @@
 import CFG from "./config.js";
-import { Marker } from "./Marker.js";
+import { hideAllPanels, Marker } from "./Marker.js";
 import { videoPlayer, videoPlay, videoPause, videoIsPlaying, videoGetChapterIndex } from './video';
 import { controlsHighlightChapter } from "./videoControls.js";
 
@@ -50,6 +50,7 @@ $overlay.addEventListener( 'click', () => {
 });
 
 videoPlayer.on('play', () => {
+  hideAllPanels();
   $progressNotes.classList.add('show');
 });
 

@@ -18,6 +18,12 @@ const createData = function( type, data ){
   }
 }
 
+export const hideAllPanels = () => {
+  $infoPanels.forEach( ($panel) => {
+    $panel.classList.remove('visible');
+  });
+}
+
 export const Marker = function( config ){
   this.id = config.id;
   this.chapterIndex = config.chapterIndex;
@@ -31,15 +37,12 @@ export const Marker = function( config ){
   this.$ele.addEventListener( 'click', ( e ) => {
     e.stopPropagation();
     videoPause();
-    $infoPanels.forEach( ($panel) => {
-      $panel.classList.remove('visible');
-    });
-    this.$infoPanel.classList.add('visible');
+    this.showPanel();
     this.isClicked = true;
   })
   this.$infoPanel.addEventListener('click', ( e ) => {
     videoPlay();
-    this.$infoPanel.classList.remove('visible');
+    this.hidePanel();
   })
 }
 
@@ -71,6 +74,13 @@ Marker.prototype = {
         }
       }
     });   
+  },
+  showPanel: function(){
+    hideAllPanels();
+    this.$infoPanel.classList.add('visible');
+  },
+  hidePanel: function(){
+    this.$infoPanel.classList.remove('visible');
   },
   appendTo: function( $parent ){
     this.$parent = $parent;
