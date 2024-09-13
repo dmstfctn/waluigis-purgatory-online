@@ -1,9 +1,12 @@
 import CFG from "./config.js";
 import { Marker } from "./Marker.js";
-import { videoPlay, videoPause, videoIsPlaying } from './video';
+import { videoPlay, videoPause, videoIsPlaying, videoGetChapterIndex } from './video';
 import { controlsHighlightChapter } from "./videoControls.js";
 
 const $overlay = document.getElementById( 'overlay' );
+
+const $notesRead = document.getElementById( 'notes-read' );
+const $notesTotal = document.getElementById( 'notes-total' );
 
 const markers = [];
 CFG.markers.forEach( (config) => {
@@ -20,6 +23,11 @@ const frame = () => {
   markers.forEach( (marker) => {
     marker.update();
   });
+  const chapterIndex = videoGetChapterIndex();
+  const chapterMarkersTotal = markers.filter( ( marker ) => marker.chapterIndex === chapterIndex ).length;
+  const chapterMarkersClicked = markers.filter( ( marker ) => marker.chapterIndex === chapterIndex && marker.isClicked ).length;
+  $notesTotal.innerText = chapterMarkersTotal;
+  $notesRead.innerHTML = chapterMarkersClicked;
 }
 requestAnimationFrame( frame );
 
