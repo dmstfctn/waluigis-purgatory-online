@@ -10,7 +10,7 @@ CFG.markers.forEach( (config) => {
   const marker = new Marker( config );
   marker.appendTo( $overlay );
   marker.onVisible = function(){
-    controlsHighlightChapter( config.chapterIndex );
+    //controlsHighlightChapter( config.chapterIndex );
   };
   markers.push( marker );
 });
