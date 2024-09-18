@@ -90,6 +90,7 @@ Marker.prototype = {
   },
   showPanel: function(){
     hideAllPanels();
+    this.$infoPanel.querySelector('.panel-close').style.transform = `translateX( 50% ) translateY(-50%) rotate(${(Math.random() * 8) - 4}deg)`;
     this.$infoPanel.classList.add('visible');
     this.$infoPanel.querySelectorAll('img, video').forEach(( $ele ) => { 
       $ele.src = $ele.dataset.src;
