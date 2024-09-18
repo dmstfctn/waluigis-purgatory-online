@@ -330,7 +330,7 @@ body{
       #progress .progress--indicator .notes .note:after{
         content: '';
         display: block;
-        width: 1px;
+        width: 2px;
         height: 100%;
         background-color: red;
         left: 5px;
