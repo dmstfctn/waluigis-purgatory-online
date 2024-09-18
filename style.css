@@ -110,6 +110,7 @@ body{
       opacity: 0;
       pointer-events: none;
       transition: opacity .5s linear;    
+      box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.8);
     }
     #info .info-panel__nofig{
       width: auto;
