@@ -40,6 +40,14 @@ html, body{
   overflow: hidden;
 }
 
+
+
+@media (max-width: 1400px){
+  html{
+    font-size: 1vw;
+  }
+}
+
 body{
   display: flex;
   flex-direction: row;  
