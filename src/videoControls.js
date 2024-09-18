@@ -83,12 +83,14 @@ videoPlayer.getDuration().then( (duration) => {
 
     $progressIndicatorNotes.appendChild( $note );
 
-    $note.addEventListener( 'click', () => {        
-      if( !videoIsPlaying() ) return;        
+    $note.addEventListener( 'click', () => {                     
       videoSetTime( marker.data[0][0] / CFG.video.framerate );
-      // if( !videoIsPlaying() ){
-      //   videoPlay();
-      // }
+      console.log('CLICK MARKER');
+      if( !videoIsPlaying() ){
+        console.log('PLAY VIDEO FOR MARKER')
+        videoPlay();
+      }
+      //if( !videoIsPlaying() ) return; 
       clearTimeout( markerShowPanelTimeout );
       markerShowPanelTimeout = setTimeout( () => {
         videoPause();
