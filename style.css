@@ -103,8 +103,11 @@ body{
   }
     #info .info-panel{
       position: absolute;
-      top: 3rem;
-      left: 3rem;
+      /* top: 3rem;
+      left: 3rem; */
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
       width: 40%;
       opacity: 0;
       pointer-events: none;
@@ -131,7 +134,7 @@ body{
         gap: 2rem;       
         overflow: auto;
         height: 100%;
-        max-height: calc( 100vh - 6rem );
+        max-height: calc( 100vh - 9rem );
       }
       .info-panel .panel-close{
         position: absolute;
@@ -207,7 +210,31 @@ body{
           font-style: italic;
           font-size: 0.85em;
         }
-      
+        /* .info-panel .panel-figures figure img{
+          cursor: zoom-in;
+        } */
+   
+  #image-zoom{
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    bottom: 4rem;
+    left: 4rem;    
+    pointer-events: none;
+    opacity: 0;
+    z-index: 99;
+    transition: opacity .1s linear;
+  }      
+    #image-zoom.visible{
+      opacity: 1;
+    }
+    #image-zoom img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  
   #video-controls{
     position: absolute;
     bottom: 4.5rem;

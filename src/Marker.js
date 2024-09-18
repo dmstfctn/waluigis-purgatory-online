@@ -2,6 +2,8 @@ import CFG from './config.js';
 import { videoPlay, videoPause, videoGetTime } from './video.js';
 
 const $infoPanels = document.querySelectorAll('.info-panel');
+const $imgZoom = document.getElementById('image-zoom');
+const $zoomedImg = $imgZoom.querySelector('img');
 
 const createData = function( type, data ){
   if( type === 'continuous') return data;
@@ -40,11 +42,20 @@ export const Marker = function( config ){
     videoPause();
     this.showPanel();
     this.isClicked = true;
-  })
+  });
   this.$infoPanel.addEventListener('click', ( e ) => {
     videoPlay();
     this.hidePanel();
-  })
+  });
+  this.$infoPanel.querySelectorAll('.panel-figures img').forEach(( $img ) => { 
+    $img.addEventListener('mouseover', () => {
+      $zoomedImg.src = $img.src;
+      $imgZoom.classList.add('visible')      
+    });
+    $img.addEventListener('mouseout', () => {
+      $imgZoom.classList.remove('visible')      
+    });
+  });
 }
 
 Marker.prototype = {
