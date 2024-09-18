@@ -167,8 +167,8 @@ document.body.addEventListener('keydown', ( e ) => {
 //   $btnPlayPause.innerText = 'pause';
 // });
 
-const $btnJumpForward = document.querySelector('#buttons #time button[name="forward"]');
-const $btnJumpBackward = document.querySelector('#buttons #time button[name="backward"]');
+const $btnJumpForward = document.querySelector('#video-controls button[name="forward"]');
+const $btnJumpBackward = document.querySelector('#video-controls button[name="backward"]');
 
 $btnJumpForward.addEventListener('click', () => {
   videoJumpForward();

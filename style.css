@@ -227,10 +227,10 @@ body{
   
   #video-controls{
     position: absolute;
-    bottom: 4.5rem;
-    left: 50%;
-    transform: translateX( -50% );
-    display: none;
+    top: 0;
+    right: 0;
+    height: 1rem;
+    margin-bottom: .1rem;
   }
     #video-controls button{
       background: transparent;
@@ -239,20 +239,9 @@ body{
       font-family: inherit;
       font-size: inherit;
       cursor: pointer;
+      white-space: nowrap;
     }
 
-    #buttons{
-
-    }
-      #time{
-
-      }
-        #time button{
-
-        }
-      #playpause{
-
-      }
 
   #progress{
     position: absolute;
@@ -270,7 +259,7 @@ body{
       height: 1rem;
       margin-bottom: .1rem;
     }
-      #chapters button{
+      #chapters .chapter{
         display: block;
         position: absolute;
         transition: color .13s linear;
@@ -281,9 +270,9 @@ body{
         font-size: inherit;
         cursor: pointer;
       }
-        #chapters button:active,
-        #chapters button.current,
-        #chapters button:hover{
+        #chapters .chapter:active,
+        #chapters .chapter.current,
+        #chapters .chapter:hover{
           color: #ff0000;
         }
     #progress .progress--indicator{
