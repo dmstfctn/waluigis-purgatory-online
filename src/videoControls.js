@@ -18,6 +18,7 @@ import {
 
 import { markers } from './interface.js';
 
+const $overlay = document.getElementById('overlay');
 const $progress = document.getElementById('progress');
 const $progressIndicatorBar = $progress.querySelector('.progress--indicator .bar');
 const $progressIndicatorNotes = $progress.querySelector('.progress--indicator .notes');
@@ -67,6 +68,7 @@ videoPlayer.getDuration().then( (duration) => {
   });
 
   let markerShowPanelTimeout;
+  let showProgressTimeout;
   markers.forEach( (marker, i ) => {
     const num = i + 1;
     const pos = (marker.getStartingFrameNumber() / totalFrames) * 100;
@@ -94,6 +96,16 @@ videoPlayer.getDuration().then( (duration) => {
         marker.showPanel();
       }, 500 );
     });
+
+    marker.onVisible = function(){
+      $progress.classList.add('visible');
+      $overlay.classList.add('active');
+      clearTimeout( showProgressTimeout );
+      showProgressTimeout = setTimeout(()=>{
+        $progress.classList.remove('visible');
+        $overlay.classList.remove('active');
+      }, 3000 );
+    };
   });
 
 })
