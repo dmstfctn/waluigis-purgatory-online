@@ -64,15 +64,15 @@ body{
     height: 100%;
   }
     .hotspot{
-      width: 4vw;
-      height: 4vw;
+      width: 8vw;
+      height: 8vw;
       //background-color: rgba( 255, 255, 255, 0.1 );
       opacity: 0;
       pointer-events: none;
       transition: opacity .3s linear, transform 0.05s linear;
       position: absolute;
-      left: -2vw;
-      top: -2vw;
+      left: -4vw;
+      top: -4vw;
       transform: translateX(0) translateY(0);
       cursor: pointer;
       background-size: contain;
@@ -107,8 +107,8 @@ body{
       width: auto;
     }
     #info .info-panel__image .panel-inner{
-      padding: 0;
-      background: transparent;
+      /* padding: 0;
+      background: transparent; */
     }
       #info .info-panel.visible{
         opacity: 1;
