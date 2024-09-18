@@ -69,6 +69,7 @@ videoPlayer.getDuration().then( (duration) => {
 
   let markerShowPanelTimeout;
   let showProgressTimeout;
+  const $notes = [];
   markers.forEach( (marker, i ) => {
     const num = i + 1;
     const pos = (marker.getStartingFrameNumber() / totalFrames) * 100;
@@ -100,14 +101,21 @@ videoPlayer.getDuration().then( (duration) => {
     marker.onVisible = function(){
       $progress.classList.add('visible');
       $overlay.classList.add('active');
+      $notes.forEach(( $n ) => {
+        $n.classList.remove('just-active');
+      });
       $note.classList.add('just-active');
       clearTimeout( showProgressTimeout );
       showProgressTimeout = setTimeout(()=>{
         $progress.classList.remove('visible');
-        $overlay.classList.remove('active');
-        $note.classList.remove('just-active');
+        $overlay.classList.remove('active');        
+        $notes.forEach(( $n ) => {
+          $n.classList.remove('just-active');
+        });
       }, 5000 );
     };
+
+    $notes.push( $note );
   });
 
 })

@@ -269,11 +269,17 @@ body{
         font-family: inherit;
         font-size: inherit;
         cursor: pointer;
+        text-shadow:
+          -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
       }
         #chapters .chapter:active,
         #chapters .chapter.current,
         #chapters .chapter:hover{
           color: #ff0000;
+          text-shadow: none;
         }
     #progress .progress--indicator{
       width: 100%;
