@@ -69,6 +69,7 @@ videoPlayer.getDuration().then( (duration) => {
 
   let markerShowPanelTimeout;
   let showProgressTimeout;
+  const $notes = [];
   markers.forEach( (marker, i ) => {
     const num = i + 1;
     const pos = (marker.getStartingFrameNumber() / totalFrames) * 100;
@@ -100,12 +101,21 @@ videoPlayer.getDuration().then( (duration) => {
     marker.onVisible = function(){
       $progress.classList.add('visible');
       $overlay.classList.add('active');
+      $notes.forEach(( $n ) => {
+        $n.classList.remove('just-active');
+      });
+      $note.classList.add('just-active');
       clearTimeout( showProgressTimeout );
       showProgressTimeout = setTimeout(()=>{
         $progress.classList.remove('visible');
-        $overlay.classList.remove('active');
+        $overlay.classList.remove('active');        
+        $notes.forEach(( $n ) => {
+          $n.classList.remove('just-active');
+        });
       }, 5000 );
     };
+
+    $notes.push( $note );
   });
 
 })
@@ -165,8 +175,8 @@ document.body.addEventListener('keydown', ( e ) => {
 //   $btnPlayPause.innerText = 'pause';
 // });
 
-const $btnJumpForward = document.querySelector('#buttons #time button[name="forward"]');
-const $btnJumpBackward = document.querySelector('#buttons #time button[name="backward"]');
+const $btnJumpForward = document.querySelector('#video-controls button[name="forward"]');
+const $btnJumpBackward = document.querySelector('#video-controls button[name="backward"]');
 
 $btnJumpForward.addEventListener('click', () => {
   videoJumpForward();

@@ -227,10 +227,10 @@ body{
   
   #video-controls{
     position: absolute;
-    bottom: 4.5rem;
-    left: 50%;
-    transform: translateX( -50% );
-    display: none;
+    top: 0;
+    right: 0;
+    height: 1rem;
+    margin-bottom: .1rem;
   }
     #video-controls button{
       background: transparent;
@@ -239,20 +239,13 @@ body{
       font-family: inherit;
       font-size: inherit;
       cursor: pointer;
+      white-space: nowrap;
+      transition: color .13s linear;
+    }
+    #video-controls button:hover{
+      color: #FF0000;
     }
 
-    #buttons{
-
-    }
-      #time{
-
-      }
-        #time button{
-
-        }
-      #playpause{
-
-      }
 
   #progress{
     position: absolute;
@@ -270,7 +263,7 @@ body{
       height: 1rem;
       margin-bottom: .1rem;
     }
-      #chapters button{
+      #chapters .chapter{
         display: block;
         position: absolute;
         transition: color .13s linear;
@@ -280,11 +273,17 @@ body{
         font-family: inherit;
         font-size: inherit;
         cursor: pointer;
+        text-shadow:
+          -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
       }
-        #chapters button:active,
-        #chapters button.current,
-        #chapters button:hover{
+        #chapters .chapter:active,
+        #chapters .chapter.current,
+        #chapters .chapter:hover{
           color: #ff0000;
+          text-shadow: none;
         }
     #progress .progress--indicator{
       width: 100%;
@@ -330,7 +329,7 @@ body{
       #progress .progress--indicator .notes .note:after{
         content: '';
         display: block;
-        width: 1px;
+        width: 2px;
         height: 100%;
         background-color: red;
         left: 5px;
@@ -353,7 +352,8 @@ body{
           white-space: nowrap;
           pointer-events: none;
         }
-        #progress .progress--indicator .notes .note:hover .title{
+        #progress .progress--indicator .notes .note:hover .title,
+        #progress .progress--indicator .notes .note.just-active .title{
           opacity: 1;
         }
 
