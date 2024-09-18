@@ -353,7 +353,8 @@ body{
           white-space: nowrap;
           pointer-events: none;
         }
-        #progress .progress--indicator .notes .note:hover .title{
+        #progress .progress--indicator .notes .note:hover .title,
+        #progress .progress--indicator .notes .note.just-active .title{
           opacity: 1;
         }
 

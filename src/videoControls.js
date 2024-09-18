@@ -100,10 +100,12 @@ videoPlayer.getDuration().then( (duration) => {
     marker.onVisible = function(){
       $progress.classList.add('visible');
       $overlay.classList.add('active');
+      $note.classList.add('just-active');
       clearTimeout( showProgressTimeout );
       showProgressTimeout = setTimeout(()=>{
         $progress.classList.remove('visible');
         $overlay.classList.remove('active');
+        $note.classList.remove('just-active');
       }, 5000 );
     };
   });
