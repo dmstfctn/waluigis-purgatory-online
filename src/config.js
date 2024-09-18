@@ -42,13 +42,13 @@ export default {
     /* CHAPTER 1 */
     {
       id: 'checkerboard',
-      title: 'TITLE',
+      title: 'Note 1: Theatre of Memory',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 0,
       data: {
         frames: {
-          from: calculateFrames( 0, 2 ),
+          from: calculateFrames( 0, 10 ),
           to: calculateFrames( 0, 39 )
         },
         position: {
@@ -59,13 +59,13 @@ export default {
     },
     {
       id: 'curtains',
-      title: 'TITLE',
+      title: 'Note 2: Curtains',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 0,
       data: {
         frames: {
-          from: calculateFrames( 0, 2 ),
+          from: calculateFrames( 0, 27 ),
           to: calculateFrames( 0, 39 )
         },
         position: {
@@ -76,13 +76,13 @@ export default {
     },
     {
       id: 'sign',
-      title: 'TITLE',
+      title: 'Note 3: Signs',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 0,
       data: {
         frames: {
-          from: calculateFrames( 0, 43 ),
+          from: calculateFrames( 0, 45 ),
           to: calculateFrames( 1, 33 )
         },
         position: {
@@ -93,24 +93,24 @@ export default {
     },
     {
       id: 'waluigi-ch1',
-      title: 'TITLE',
+      title: 'Note 4: The Protagonist AI',
       type: 'continuous',
       image: 'sparkle.gif',
       chapterIndex: 0,
-      data: dataWaluigiCh1
+      data: dataWaluigiCh1.filter((d) => d[0] > 3600)
     },
 
     /* CHAPTER 2 */
     {
       id: 'letters',
-      title: 'TITLE',
+      title: 'Note 6: Letters',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 1,
       data: {
         frames: {
-          from: calculateFrames( 1, 57 ),
-          to: calculateFrames( 2, 15 )
+          from: calculateFrames( 2, 15 ),
+          to: calculateFrames( 5, 49 )
         },
         position: {
           x: 900,
@@ -120,13 +120,13 @@ export default {
     },
     {
       id: 'K',
-      title: 'TITLE',
+      title: 'Note 7: Killer',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 1,
       data: {
         frames: {
-          from: calculateFrames( 2, 18 ),
+          from: calculateFrames( 2, 30 ),
           to: calculateFrames( 5, 49 )
         },
         position: {
@@ -137,14 +137,14 @@ export default {
     },
     {
       id: 'stage',
-      title: 'TITLE',
+      title: 'Note 5: The Main Stage',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 1,
       data: {
         frames: {
           from: calculateFrames( 1, 57 ),
-          to: calculateFrames( 2, 16 )
+          to: calculateFrames( 2, 15 )
         },
         position: {
           x: 960,
@@ -154,23 +154,23 @@ export default {
     },
     {
       id: 'waluigi-ch2',
-      title: 'TITLE',
+      title: 'Note 8: Embodiment',
       type: 'continuous',
       image: 'sparkle.gif',
       chapterIndex: 1,
-      data: dataWaluigiCh2
+      data: dataWaluigiCh2.filter((d) => d[0] > 14640)
     },
     
     /* CHAPTER 3 */
     {
       id: 'stage-ch3',
-      title: 'TITLE',
+      title: 'Note 11: Wall Inscriptions',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
       data: {
         frames: {
-          from: calculateFrames( 6, 3 ),
+          from: calculateFrames( 7, 30 ),
           to: calculateFrames( 9, 3 )
         },
         position: {
@@ -181,13 +181,13 @@ export default {
     },
     {
       id: 'Z',
-      title: 'TITLE',
+      title: 'Note 10: Zombie',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
       data: {
         frames: {
-          from: calculateFrames( 6, 3 ),
+          from: calculateFrames( 6, 40 ),
           to: calculateFrames( 7, 30 )
         },
         position: {
@@ -198,14 +198,14 @@ export default {
     },
     {
       id: 'G',
-      title: 'TITLE',
+      title: 'Note 12: GPT3XL',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
       data: {
         frames: {
-          from: calculateFrames( 6, 3 ),
-          to: calculateFrames( 7, 30 )
+          from: calculateFrames( 8, 38 ),
+          to: calculateFrames( 9, 3 )
         },
         position: {
           x: 415,
@@ -215,7 +215,7 @@ export default {
     },
     {
       id: 'loot',
-      title: 'TITLE',
+      title: 'Note 9: Coughing loot',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
@@ -233,7 +233,7 @@ export default {
     /* CHAPTER 4 */
     {
       id: 'stage-ch4',
-      title: 'TITLE',
+      title: 'Note 14: Sliding stage',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 3,
@@ -250,7 +250,7 @@ export default {
     },
     {
       id: 'entrance',
-      title: 'TITLE',
+      title: 'Note 13: The antagonist AI',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 3,

@@ -57,10 +57,10 @@ videoPlayer.getDuration().then( (duration) => {
         $other.classList.remove( 'seeking' );
       });
       $btn.classList.add('seeking');
-      videoSetChapter( i );
       if( !videoIsPlaying() ){
         videoPlay();
       }
+      videoSetChapter( i );
     });
     $chapters.appendChild( $btn );
     $btnChapters.push( $btn );
