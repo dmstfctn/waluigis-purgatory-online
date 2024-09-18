@@ -18,17 +18,17 @@ export default {
   },
   chapters: [
     {
-      name: 'The Courtyard',
+      name: 'The courtyard',
       time: 0,
       frame: calculateFrames( 0, 0 )
     },
     {
-      name: 'The Cave',
+      name: 'The cave',
       time: 113.5,
       frame: calculateFrames( 1, 53.5 )
     },
     {
-      name: 'The Chamber',
+      name: 'The chamber',
       time: 361.5,
       frame: calculateFrames( 6, 1.5 )
     },
@@ -93,7 +93,7 @@ export default {
     },
     {
       id: 'waluigi-ch1',
-      title: 'Note 4: The Protagonist AI',
+      title: 'Note 4: The protagonist AI',
       type: 'continuous',
       image: 'sparkle.gif',
       chapterIndex: 0,
@@ -137,7 +137,7 @@ export default {
     },
     {
       id: 'stage',
-      title: 'Note 5: The Main Stage',
+      title: 'Note 5: Rotating stage',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 1,
@@ -164,7 +164,7 @@ export default {
     /* CHAPTER 3 */
     {
       id: 'stage-ch3',
-      title: 'Note 11: Wall Inscriptions',
+      title: 'Note 11: Wall inscriptions',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
@@ -198,7 +198,7 @@ export default {
     },
     {
       id: 'G',
-      title: 'Note 12: GPT3XL',
+      title: 'Note 12: GPT-3 XL',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
