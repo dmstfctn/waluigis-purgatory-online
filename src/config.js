@@ -19,25 +19,30 @@ export default {
   chapters: [
     {
       name: 'The Courtyard',
-      time: 0
+      time: 0,
+      frame: calculateFrames( 0, 0 )
     },
     {
       name: 'The Cave',
-      time: 113.5
+      time: 113.5,
+      frame: calculateFrames( 1, 53.5 )
     },
     {
       name: 'The Chamber',
-      time: 361.5
+      time: 361.5,
+      frame: calculateFrames( 6, 1.5 )
     },
     {
       name: 'Corridors',
-      time: 557.7
+      time: 557.7,
+      frame: calculateFrames( 9, 17.7 )
     }
   ],
   markers: [
     /* CHAPTER 1 */
     {
       id: 'checkerboard',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 0,
@@ -54,6 +59,7 @@ export default {
     },
     {
       id: 'curtains',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 0,
@@ -70,6 +76,7 @@ export default {
     },
     {
       id: 'sign',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 0,
@@ -86,6 +93,7 @@ export default {
     },
     {
       id: 'waluigi-ch1',
+      title: 'TITLE',
       type: 'continuous',
       image: 'sparkle.gif',
       chapterIndex: 0,
@@ -95,6 +103,7 @@ export default {
     /* CHAPTER 2 */
     {
       id: 'letters',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 1,
@@ -111,6 +120,7 @@ export default {
     },
     {
       id: 'K',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 1,
@@ -127,6 +137,7 @@ export default {
     },
     {
       id: 'stage',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 1,
@@ -143,6 +154,7 @@ export default {
     },
     {
       id: 'waluigi-ch2',
+      title: 'TITLE',
       type: 'continuous',
       image: 'sparkle.gif',
       chapterIndex: 1,
@@ -152,6 +164,7 @@ export default {
     /* CHAPTER 3 */
     {
       id: 'stage-ch3',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
@@ -168,6 +181,7 @@ export default {
     },
     {
       id: 'Z',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
@@ -184,6 +198,7 @@ export default {
     },
     {
       id: 'G',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
@@ -200,6 +215,7 @@ export default {
     },
     {
       id: 'loot',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
@@ -217,6 +233,7 @@ export default {
     /* CHAPTER 4 */
     {
       id: 'stage-ch4',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 3,
@@ -233,6 +250,7 @@ export default {
     },
     {
       id: 'entrance',
+      title: 'TITLE',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 3,

@@ -26,6 +26,7 @@ export const hideAllPanels = () => {
 
 export const Marker = function( config ){
   this.id = config.id;
+  this.title = config.title;
   this.chapterIndex = config.chapterIndex;
   this.data = createData( config.type, config.data );
   this.$ele = document.createElement('div');

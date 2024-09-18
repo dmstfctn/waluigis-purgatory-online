@@ -4,12 +4,16 @@ import {
   videoPlayer,
   videoJumpBackward,
   videoJumpForward,
+  videoSetTime,
   videoSetChapter,
   videoSetChapterIndex,
   videoGetChapterIndex,
   videoToggle,
   videoNextChapter,
-  videoPrevChapter
+  videoPrevChapter,
+  videoIsPlaying,
+  videoPlay,
+  videoPause
 } from './video.js';
 
 import { markers } from './interface.js';
@@ -37,34 +41,62 @@ export const controlsHighlightChapter = ( index ) => {
   }
 }
 
-CFG.chapters.forEach( (chapter, i ) => {
-  const $btn = document.createElement('button');
-  $btn.name = chapter.name;
-  $btn.innerText = chapter.name;
-  $btn.classList.add('chapter');
-
-  $btn.addEventListener( 'click', () => {
-    $btnChapters.forEach( ($other) => {
-      $other.classList.remove( 'seeking' );
-    });
-    $btn.classList.add('seeking');
-    videoSetChapter( i );
-  });
-  $chapters.appendChild( $btn );
-  $btnChapters.push( $btn );
-});
-
 videoPlayer.getDuration().then( (duration) => {
   const totalFrames = calculateFrames( Math.floor(duration / 60), duration % 60 );
+
+  CFG.chapters.forEach( (chapter, i ) => {
+    const pos = (chapter.frame / totalFrames) * 100;
+    const $btn = document.createElement('button');
+    $btn.name = chapter.name;
+    $btn.innerText = chapter.name;
+    $btn.classList.add('chapter');
+    $btn.style.left = `${pos}%`;
+  
+    $btn.addEventListener( 'click', () => {
+      $btnChapters.forEach( ($other) => {
+        $other.classList.remove( 'seeking' );
+      });
+      $btn.classList.add('seeking');
+      videoSetChapter( i );
+      if( !videoIsPlaying() ){
+        videoPlay();
+      }
+    });
+    $chapters.appendChild( $btn );
+    $btnChapters.push( $btn );
+  });
+
+  let markerShowPanelTimeout;
   markers.forEach( (marker, i ) => {
     const num = i + 1;
     const pos = (marker.getStartingFrameNumber() / totalFrames) * 100;
     const $note = document.createElement('span');
     $note.classList.add('note');
-    $note.innerText = num;
+    //$note.innerText = num;
     $note.style.left = `${ pos }%`;
+    
+    const $title = document.createElement('span');
+    $title.classList.add('title');
+    $title.innerText = marker.title;
+    
+    $note.appendChild( $title );
+
     $progressIndicatorNotes.appendChild( $note );
+
+    $note.addEventListener( 'click', () => {        
+      if( !videoIsPlaying() ) return;        
+      videoSetTime( marker.data[0][0] / CFG.video.framerate );
+      // if( !videoIsPlaying() ){
+      //   videoPlay();
+      // }
+      clearTimeout( markerShowPanelTimeout );
+      markerShowPanelTimeout = setTimeout( () => {
+        videoPause();
+        marker.showPanel();
+      }, 500 );
+    });
   });
+
 })
 
 videoPlayer.on('timeupdate', ( { seconds } ) => {

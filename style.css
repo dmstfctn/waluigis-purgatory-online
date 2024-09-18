@@ -211,9 +211,10 @@ body{
   #video-controls{
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX( -50% );
     padding: 1.5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3.5rem;
   }
     #video-controls button{
       background: transparent;
@@ -223,32 +224,6 @@ body{
       font-size: inherit;
       cursor: pointer;
     }
-    #chapters{
-      margin-bottom: 0.5rem;
-    }
-      #chapters button{
-        display: block;
-        position: relative;
-        transition: color .13s linear;
-      }
-        /* #chapters button:active::before,
-        #chapters button.current::before,
-        #chapters button:hover::before{
-          content: '';
-          width: .4em;
-          height: .4em;
-          border-radius: 50%;
-          background-color: #FFFFFF;
-          position: absolute;
-          right: 100%;
-          top: 50%;
-          transform: translateY(-70%);
-        } */
-        #chapters button:active,
-        #chapters button.current,
-        #chapters button:hover{
-          color: #ff0000;
-        }
 
     #buttons{
 
@@ -270,12 +245,37 @@ body{
     width: 100%;
     background: transparent;
   }
+    #chapters{
+      margin-bottom: 2.5rem;
+      position: relative;
+      height: 1rem;
+    }
+      #chapters button{
+        display: block;
+        position: absolute;
+        transition: color .13s linear;
+        background: transparent;
+        border: none;
+        color: #FFFFFF;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
+      }
+        #chapters button:active,
+        #chapters button.current,
+        #chapters button:hover{
+          color: #ff0000;
+        }
     #progress .progress--indicator{
       width: 100%;
-      height: 1rem;
-      position: absolute;
+      height: 0.1rem;
+      position: relative;
       bottom: 0;
       background: rgba( 255,255,255,0.1);
+    }
+    #progress .progress--indicator.visible,
+    #progress:hover .progress--indicator{
+      height: 1.6rem; 
     }
       .progress--indicator .bar{
         width: 0;
@@ -296,13 +296,38 @@ body{
       #progress .progress--indicator .notes .note{
         position: absolute;
         left: 0;
-        font-size: 0.6rem;
-        color: red;
-        line-height: 1rem; 
+        width: 10px;
+        height: 100%;
+        transform: translateX( -5px );             
         transition: color .5s linear;
+        cursor: pointer;
       }
-        #progress .progress--indicator .notes .note.gone{
-          color: #000000;
+      #progress .progress--indicator .notes .note:after{
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: red;
+        left: 5px;
+        position: absolute;
+
+      }
+        #progress .progress--indicator .notes .note.gone:after{
+          background-color: #000000;
+        }
+
+        #progress .progress--indicator .notes .note .title{
+          display: block;
+          color: #ffffff;
+          position: absolute;
+          bottom: calc( 100% + .5rem );
+          left: 0;
+          left: 5px;
+          opacity: 0;
+          transition: opacity .5s linear;
+        }
+        #progress .progress--indicator .notes .note:hover .title{
+          opacity: 1;
         }
 
     #progress .progress--notes{
