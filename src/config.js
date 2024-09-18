@@ -198,7 +198,7 @@ export default {
     },
     {
       id: 'G',
-      title: 'Note 12: GPT-3 XL',
+      title: 'Note 12: Grew',
       type: 'range',
       image: 'sparkle.gif',
       chapterIndex: 2,
