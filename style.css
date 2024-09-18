@@ -241,6 +241,11 @@ body{
       cursor: pointer;
       white-space: nowrap;
       transition: color .13s linear;
+      text-shadow:
+          -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
     }
     #video-controls button:hover{
       color: #FF0000;
@@ -283,7 +288,6 @@ body{
         #chapters .chapter.current,
         #chapters .chapter:hover{
           color: #ff0000;
-          text-shadow: none;
         }
     #progress .progress--indicator{
       width: 100%;
@@ -351,6 +355,11 @@ body{
           transition: opacity .5s linear; 
           white-space: nowrap;
           pointer-events: none;
+          text-shadow:
+          -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
         }
         #progress .progress--indicator .notes .note:hover .title,
         #progress .progress--indicator .notes .note.just-active .title{
