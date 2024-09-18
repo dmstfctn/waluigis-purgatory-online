@@ -43,7 +43,7 @@ export const Marker = function( config ){
     this.showPanel();
     this.isClicked = true;
   });
-  this.$infoPanel.addEventListener('click', ( e ) => {
+  this.$infoPanel.querySelector('.panel-close').addEventListener('click', ( e ) => {
     videoPlay();
     this.hidePanel();
   });
