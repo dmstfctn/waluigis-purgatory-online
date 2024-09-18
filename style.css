@@ -240,6 +240,10 @@ body{
       font-size: inherit;
       cursor: pointer;
       white-space: nowrap;
+      transition: color .13s linear;
+    }
+    #video-controls button:hover{
+      color: #FF0000;
     }
 
 
