@@ -16,6 +16,9 @@ export default {
     },
     framerate: FRAMERATE
   },
+  interface: {
+    markerHintDuration: 5000
+  },
   chapters: [
     {
       name: 'The courtyard',
@@ -221,7 +224,7 @@ export default {
       chapterIndex: 2,
       data: {
         frames: {
-          from: calculateFrames( 6, 3 ),
+          from: calculateFrames( 6, 15 ),
           to: calculateFrames( 7, 30 )
         },
         position: {

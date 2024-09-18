@@ -1,9 +1,10 @@
 import CFG from "./config.js";
 import { hideAllPanels, Marker } from "./Marker.js";
 import { videoPlayer, videoPlay, videoPause, videoIsPlaying, videoGetChapterIndex } from './video';
-import { controlsHighlightChapter } from "./videoControls.js";
+import { showProgressTemp } from "./videoControls.js";
 
 const $overlay = document.getElementById( 'overlay' );
+
 
 export const markers = [];
 CFG.markers.forEach( (config) => {
@@ -26,7 +27,8 @@ $overlay.addEventListener( 'mousemove', () => {
   clearTimeout( overlayShowTimeout );
   overlayShowTimeout = setTimeout( () => {
     $overlay.classList.remove( 'active' );
-  }, 2000 );
+  }, CFG.interface.markerHintDuration );
+  showProgressTemp();
 });
 
 $overlay.addEventListener( 'click', () => {

@@ -24,22 +24,26 @@ const $progressIndicatorBar = $progress.querySelector('.progress--indicator .bar
 const $progressIndicatorNotes = $progress.querySelector('.progress--indicator .notes');
 const $chapters = document.getElementById('chapters');
 const $btnChapters = [];
+const $notes = [];
+let showProgressTimeout;
 
-export const controlsHighlightChapter = ( index ) => {
-  if( $btnChapters[ index ] ){
-    $btnChapters[ index ].animate(
-      [
-        { opacity: 0 },
-        { opacity: 0, offset: 0.5 },
-        { opacity: 1, offset: 0.51 },
-        { opacity: 1 },
-      ],
-      {
-        duration: 500,
-        iterations: 10
-      }
-    )
+export const showProgressTemp = ( $note=false ) => {
+  $progress.classList.add('visible');
+  $overlay.classList.add('active');
+  $notes.forEach(( $n ) => {
+    $n.classList.remove('just-active');
+  });
+  if( $note ){
+    $note.classList.add('just-active');
   }
+  clearTimeout( showProgressTimeout );
+  showProgressTimeout = setTimeout(()=>{
+    $progress.classList.remove('visible');
+    $overlay.classList.remove('active');        
+    $notes.forEach(( $n ) => {
+      $n.classList.remove('just-active');
+    });
+  }, CFG.interface.markerHintDuration );
 }
 
 videoPlayer.getDuration().then( (duration) => {
@@ -67,9 +71,7 @@ videoPlayer.getDuration().then( (duration) => {
     $btnChapters.push( $btn );
   });
 
-  let markerShowPanelTimeout;
-  let showProgressTimeout;
-  const $notes = [];
+  let markerShowPanelTimeout;  
   markers.forEach( (marker, i ) => {
     const num = i + 1;
     const pos = (marker.getStartingFrameNumber() / totalFrames) * 100;
@@ -99,20 +101,7 @@ videoPlayer.getDuration().then( (duration) => {
     });
 
     marker.onVisible = function(){
-      $progress.classList.add('visible');
-      $overlay.classList.add('active');
-      $notes.forEach(( $n ) => {
-        $n.classList.remove('just-active');
-      });
-      $note.classList.add('just-active');
-      clearTimeout( showProgressTimeout );
-      showProgressTimeout = setTimeout(()=>{
-        $progress.classList.remove('visible');
-        $overlay.classList.remove('active');        
-        $notes.forEach(( $n ) => {
-          $n.classList.remove('just-active');
-        });
-      }, 5000 );
+      showProgressTemp( $note );
     };
 
     $notes.push( $note );
