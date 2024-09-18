@@ -51,16 +51,6 @@ body{
   position: relative;
 }
 
-@media (max-aspect-ratio: 16/9) {
-  body{
-    flex-direction: column;  
-  }
-  #interface{
-    width: 100vw;
-    height: calc( 100vw / 16 * 9 );
-  }
-}
-
   #video{
     width: 100%;
     height: auto;
@@ -116,7 +106,7 @@ body{
     #info .info-panel__nofig{
       width: auto;
     }
-    #info .info-panel__image{
+    #info .info-panel__image .panel-inner{
       padding: 0;
       background: transparent;
     }
@@ -378,3 +368,16 @@ body{
       #progress .progress--notes.show{
         opacity: 1;
       }
+
+@media (max-aspect-ratio: 16/9) {
+  body{
+    flex-direction: column;  
+  }
+  #interface{
+    width: 100vw;
+    height: calc( 100vw / 16 * 9 );
+  }
+  #info .info-panel{
+    width: 66%;
+  }
+}
