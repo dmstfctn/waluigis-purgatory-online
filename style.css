@@ -334,6 +334,7 @@ body{
           opacity: 0;
           transition: opacity .5s linear; 
           white-space: nowrap;
+          pointer-events: none;
         }
         #progress .progress--indicator .notes .note:hover .title{
           opacity: 1;
