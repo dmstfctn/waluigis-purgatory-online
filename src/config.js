@@ -221,7 +221,7 @@ export default {
       chapterIndex: 2,
       data: {
         frames: {
-          from: calculateFrames( 6, 3 ),
+          from: calculateFrames( 6, 15 ),
           to: calculateFrames( 7, 30 )
         },
         position: {
