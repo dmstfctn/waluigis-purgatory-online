@@ -104,7 +104,7 @@ videoPlayer.getDuration().then( (duration) => {
       showProgressTimeout = setTimeout(()=>{
         $progress.classList.remove('visible');
         $overlay.classList.remove('active');
-      }, 3000 );
+      }, 5000 );
     };
   });
 
