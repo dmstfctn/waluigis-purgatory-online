@@ -106,18 +106,9 @@ body{
       top: 3rem;
       left: 3rem;
       width: 40%;
-      padding: 1rem 1.3rem;
-      box-sizing: border-box;
-      background-color: rgba( 140, 140, 140, 1);
-      color: #000000;
       opacity: 0;
       pointer-events: none;
-      transition: opacity .5s linear;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      max-height: calc( 100% - 6rem );
-      overflow: auto;
+      transition: opacity .5s linear;    
     }
     #info .info-panel__nofig{
       width: auto;
@@ -130,6 +121,35 @@ body{
         opacity: 1;
         pointer-events: all;
       }
+      .info-panel .panel-inner{
+        padding: 1rem 1.3rem;
+        box-sizing: border-box;
+        background-color: rgba( 140, 140, 140, 1);
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;       
+        overflow: auto;
+        height: 100%;
+        max-height: calc( 100vh - 6rem );
+      }
+      .info-panel .panel-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        border: none;
+        font-size: 3rem;
+        font-family: inherit;
+        color: red;
+        height: 0.6em;
+        line-height: 0.6em;
+        padding: 0;
+        margin: 0;
+        transform: translateX( 50% ) translateY(-50%);
+        cursor: pointer;
+      }
+
       .info-panel .panel-text{
         font-size: 1.1rem;
         flex-grow: 1;
