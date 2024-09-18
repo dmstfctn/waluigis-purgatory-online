@@ -128,8 +128,7 @@ videoPlayer.on('timeupdate', ( { seconds } ) => {
   }
 });
 
-document.body.addEventListener('keydown', ( e ) => {
-  console.log(e);
+document.body.addEventListener('keydown', ( e ) => {  
   if( e.key === 'ArrowRight' ){
     videoJumpForward();
   } else if( e.key === 'ArrowLeft' ){
