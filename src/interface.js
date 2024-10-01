@@ -47,3 +47,16 @@ videoPlayer.on('play', () => {
 videoPlayer.on('pause', () => {
   $progressNotes.classList.remove('show');
 });
+
+const $infobtn = document.querySelector('button[name="info"]');
+const $infopanel = document.querySelector('#main-info');
+const $infoclose = $infopanel.querySelector('.panel-close');
+
+$infobtn.addEventListener('click', () => {
+  hideAllPanels();
+  $infopanel.classList.add('visible');
+});
+
+$infoclose.addEventListener('click', () => {
+  hideAllPanels();
+});

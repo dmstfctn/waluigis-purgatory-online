@@ -169,6 +169,9 @@ body{
       .info-panel .panel-text h6{
         margin-top: 0;
       }
+        .info-panel .panel-text h1{
+          font-size: 1.65rem;
+        }
       .info-panel .panel-text h1,
       .info-panel .panel-text h2,
       .info-panel .panel-text h3,
@@ -246,7 +249,7 @@ body{
       border: none;
       color: #FFFFFF;
       font-family: inherit;
-      font-size: inherit;
+      font-size: 0.7rem;
       cursor: pointer;
       white-space: nowrap;
       transition: color .13s linear;
