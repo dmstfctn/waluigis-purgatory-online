@@ -434,7 +434,7 @@ body{
     width: 90%;
   }
     .info-panel .panel-inner{
-      /*max-height: calc( 100vh - 3rem );*/
+      max-height: calc( 100vh - 12rem );
     }
   #chapters{
     position: fixed;
