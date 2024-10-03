@@ -400,6 +400,9 @@ body{
 }
 
 @media (max-aspect-ratio: 1/1) and (max-width: 1080px){
+  html{
+    font-size: 2.6vw;
+  }
   #progress{
     position: fixed;
   }
@@ -425,7 +428,7 @@ body{
         width: 100%;
         text-align: center;
         display: block;
-        bottom: 6px;
+        bottom: .8rem;
       }
   #info .info-panel{
     width: 90%;
@@ -440,6 +443,9 @@ body{
     height: auto;
     padding: 0.6rem 0.6rem 1.6rem 0.6rem;
     box-sizing: border-box;
+  }
+  #chapters button{
+    margin-bottom: 0.1rem;
   }
   #chapters .chapter{
     position: relative;
