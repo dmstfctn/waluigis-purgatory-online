@@ -5,7 +5,7 @@ import CFG from './config.js';
 let videoCurrentChapter = 0;
 
 export const videoPlayer = new Vimeo('video', {
-  url: 'https://vimeo.com/1004219587/c15be3a75d',
+  url: 'https://vimeo.com/1128836133',
   airplay: false,
   autoplay: false,
   muted: false,
